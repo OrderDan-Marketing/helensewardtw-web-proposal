@@ -80,7 +80,7 @@
   .sec-no{font-size:15px;font-weight:700;letter-spacing:.14em;color:var(--accent);white-space:nowrap;}
   h2{font-size:clamp(20px,3vw,26px);font-weight:700;text-wrap:balance;}
   .sec-lede{color:var(--ink-soft);margin-bottom:20px;max-width:720px;}
-  h3{font-size:19px;font-weight:700;margin:30px 0 12px;}
+  h3{font-size:19px;font-weight:700;margin:30px 0 12px;scroll-margin-top:86px;}
   h4{font-size:16px;font-weight:700;margin:20px 0 8px;color:var(--brand-deep);}
   p{margin-bottom:12px;}
   section p:last-child{margin-bottom:0;}
@@ -110,6 +110,23 @@
   .checklist{list-style:none;margin-left:0;}
   .checklist li{position:relative;padding-left:34px;margin-bottom:10px;line-height:1.7;}
   .checklist li::before{content:'';position:absolute;left:0;top:2px;width:19px;height:19px;border:1.6px solid var(--brand);border-radius:4px;background:var(--card);}
+
+  .hl{color:var(--red);font-weight:700;}
+
+  .arch-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
+  .arch-nav a{display:inline-block;font-size:13.5px;font-weight:700;color:var(--brand-deep);background:var(--brand-soft);padding:7px 14px;border-radius:20px;text-decoration:none;border:1px solid transparent;}
+  .arch-nav a:hover{border-color:var(--brand);}
+  .arch-nav a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+  .mockup-row{display:flex;gap:20px;margin:18px 0 26px;flex-wrap:wrap;align-items:flex-start;}
+  .mockup-row figure.desktop{flex:1;min-width:280px;}
+  .mockup-row figure.mobile{flex:0 0 auto;width:100%;max-width:390px;}
+  .mockup-row img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:#fff;display:block;}
+  .mockup-row figcaption{margin-top:8px;font-size:13px;color:var(--ink-soft);text-align:center;}
+  @media (max-width:900px){
+    .mockup-row{flex-direction:column;}
+    .mockup-row figure.mobile{max-width:100%;}
+  }
 
   footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
 </style>
@@ -150,10 +167,10 @@
     <table>
       <thead><tr><th>階段</th><th>工具</th><th>網站要做的事</th></tr></thead>
       <tbody>
-        <tr><td>觸及</td><td>FB / IG 影片廣告(開啟對話、填寫 FB 表單)</td><td>不經過網站</td></tr>
-        <tr><td>深入了解</td><td>廣告內的「查看品牌」「看產品系列」「看課程」連結</td><td>承接想多看一點的人:品牌背景、產品系列、專業知識、課程</td></tr>
-        <tr><td>留下資料</td><td>網站表單、LINE 官方帳號</td><td>每一頁都有一條路可以走到表單或 LINE</td></tr>
-        <tr><td>後續跟進</td><td>真人客服</td><td>表單回覆寄到指定信箱,一個工作天內回覆</td></tr>
+        <tr><td>觸及</td><td>FB / IG 影片廣告(開啟對話、填寫 FB 表單)</td><td><strong class="hl">不經過網站</strong></td></tr>
+        <tr><td>深入了解</td><td>廣告內的「查看品牌」「看產品系列」「看課程」連結</td><td>承接想多看一點的人:<strong class="hl">品牌背景、產品系列、專業知識、課程</strong></td></tr>
+        <tr><td>留下資料</td><td>網站表單、LINE 官方帳號</td><td><strong class="hl">先向 ShopLine 業務做可行性評估</strong>:產品落地頁、文章頁、聯絡我們頁能否加表單;不行的話,改放<strong class="hl">外掛擴充按鈕(外連)</strong>,例如「加 LINE 諮詢」或連到表單頁的按鈕</td></tr>
+        <tr><td>後續跟進</td><td>真人客服</td><td>表單回覆寄到指定信箱,<strong class="hl">一個工作天內回覆</strong></td></tr>
       </tbody>
     </table>
   </div>
@@ -167,17 +184,17 @@
     <table>
       <thead><tr><th style="width:14%">項目</th><th>現況</th></tr></thead>
       <tbody>
-        <tr><td><b><a href="https://www.ci-ling.com/" target="_blank" rel="noopener">首頁</a></b></td><td>1 張無文字橫幅、6 支 YouTube 影片、3 張無文字的系列橫幅、1 組 <a href="https://www.ci-ling.com/pages/indaco" target="_blank" rel="noopener">INDACO</a> 商品格(附加入購物車按鈕)、1 張<a href="https://www.ci-ling.com/pages/%E5%93%81%E7%89%8C%E6%95%85%E4%BA%8B" target="_blank" rel="noopener">品牌故事</a>橫幅。全頁沒有一段文字說明品牌是誰、給誰用</td></tr>
-        <tr><td><b>頁首導覽</b></td><td>兩個下拉:「西苓國際企業」(<a href="https://www.ci-ling.com/pages/%E5%93%81%E7%89%8C%E6%95%85%E4%BA%8B" target="_blank" rel="noopener">品牌故事</a>/<a href="https://www.ci-ling.com/pages/%E5%8E%9F%E5%BB%A0%E6%8E%88%E6%AC%8A" target="_blank" rel="noopener">原廠授權</a>/<a href="https://www.ci-ling.com/pages/%E8%AA%8D%E8%AD%89%E5%B0%88%E5%88%A9" target="_blank" rel="noopener">認證專利</a>)、「<a href="https://www.ci-ling.com/pages/helen-seward" target="_blank" rel="noopener">Helen Seward</a>」(11 個產品系列)。沒有專業知識、課程、沙龍合作入口</td></tr>
-        <tr><td><b>品牌頁</b></td><td>「品牌故事」有完整文字;「原廠授權」「認證專利」「地中海 Mediter」三頁是空白頁,只有頁首頁尾</td></tr>
-        <tr><td><b>產品系列頁</b></td><td>9 個系列頁全部是商品格加購物車按鈕,沒有系列介紹文字;分類頁只有圖片與品名</td></tr>
-        <tr><td><b><a href="https://www.ci-ling.com/products" target="_blank" rel="noopener">商品頁</a></b></td><td>顯示售價與「加入購物車」</td></tr>
-        <tr><td><b>部落格</b></td><td>功能已開啟,文章數 0;有一頁殘留「部落格列表」麵包屑的空白頁</td></tr>
-        <tr><td><b>表單</b></td><td>全站只有「聯絡我們」彈窗;沒有合作洽詢、課程報名表單</td></tr>
-        <tr><td><b>LINE / 聊天按鈕</b></td><td>沒有浮動按鈕;LINE ID 只出現在頁尾文字</td></tr>
-        <tr><td><b>頁尾</b></td><td>有聯絡資訊與統編;沒有 FB / IG 社群連結</td></tr>
-        <tr><td><b>促銷頁</b></td><td>3 個促銷頁(研習會報名免運、香港運費、2026 周年慶免運費)都顯示「活動尚未開始」</td></tr>
-        <tr><td><b>其他</b></td><td>防詐騙宣導頁有未替換的「{shop name}」樣板字;首頁多處連結指向 helensewardtw391.shoplineapp.com 而非 www.ci-ling.com</td></tr>
+        <tr><td><b><a href="https://www.ci-ling.com/" target="_blank" rel="noopener">首頁</a></b></td><td>1 張無文字橫幅、6 支 YouTube 影片、3 張無文字的系列橫幅、1 組 <a href="https://www.ci-ling.com/pages/indaco" target="_blank" rel="noopener">INDACO</a> 商品格(附加入購物車按鈕)、1 張<a href="https://www.ci-ling.com/pages/%E5%93%81%E7%89%8C%E6%95%85%E4%BA%8B" target="_blank" rel="noopener">品牌故事</a>橫幅。<strong class="hl">全頁沒有一段文字說明品牌是誰、給誰用</strong></td></tr>
+        <tr><td><b>頁首導覽</b></td><td>兩個下拉:「西苓國際企業」(<a href="https://www.ci-ling.com/pages/%E5%93%81%E7%89%8C%E6%95%85%E4%BA%8B" target="_blank" rel="noopener">品牌故事</a>/<a href="https://www.ci-ling.com/pages/%E5%8E%9F%E5%BB%A0%E6%8E%88%E6%AC%8A" target="_blank" rel="noopener">原廠授權</a>/<a href="https://www.ci-ling.com/pages/%E8%AA%8D%E8%AD%89%E5%B0%88%E5%88%A9" target="_blank" rel="noopener">認證專利</a>)、「<a href="https://www.ci-ling.com/pages/helen-seward" target="_blank" rel="noopener">Helen Seward</a>」(11 個產品系列)。<strong class="hl">沒有專業知識、課程、沙龍合作入口</strong></td></tr>
+        <tr><td><b>品牌頁</b></td><td>「品牌故事」有完整文字;<strong class="hl">「原廠授權」「認證專利」「地中海 Mediter」三頁是空白頁</strong>,只有頁首頁尾</td></tr>
+        <tr><td><b>產品系列頁</b></td><td>9 個系列頁<strong class="hl">全部是商品格加購物車按鈕,沒有系列介紹文字</strong>;分類頁只有圖片與品名</td></tr>
+        <tr><td><b><a href="https://www.ci-ling.com/products" target="_blank" rel="noopener">商品頁</a></b></td><td><strong class="hl">顯示售價與「加入購物車」</strong></td></tr>
+        <tr><td><b>部落格</b></td><td>功能已開啟,<strong class="hl">文章數 0</strong>;有一頁殘留「部落格列表」麵包屑的空白頁</td></tr>
+        <tr><td><b>表單</b></td><td>全站只有「聯絡我們」彈窗;<strong class="hl">沒有合作洽詢表單</strong></td></tr>
+        <tr><td><b>LINE / 聊天按鈕</b></td><td><strong class="hl">沒有浮動按鈕</strong>;LINE ID 只出現在頁尾文字</td></tr>
+        <tr><td><b>頁尾</b></td><td>有聯絡資訊與統編;<strong class="hl">沒有 FB / IG 社群連結</strong></td></tr>
+        <tr><td><b>促銷頁</b></td><td>3 個促銷頁(研習會報名免運、香港運費、2026 周年慶免運費)<strong class="hl">都顯示「活動尚未開始」</strong></td></tr>
+        <tr><td><b>其他</b></td><td>防詐騙宣導頁有<strong class="hl">未替換的「{shop name}」樣板字</strong>;首頁多處連結指向 helensewardtw391.shoplineapp.com 而非 www.ci-ling.com</td></tr>
       </tbody>
     </table>
   </div>
@@ -191,23 +208,23 @@
 <div class="panel" id="t2">
 
 <section>
-  <div class="sec-head"><span class="sec-no">三</span><h2>對標站怎麼做(renata-hair.com.tw)</h2></div>
-  <div class="lnk-line">對標站:<a href="https://www.renata-hair.com.tw/" target="_blank" rel="noopener">官網首頁</a> · <a href="https://www.renata-hair.com.tw/blog/posts" target="_blank" rel="noopener">部落格列表</a></div>
+  <div class="sec-head"><span class="sec-no">三</span><h2>對標站:蕾娜塔 RENATA</h2><a class="inline-link" href="https://www.renata-hair.com.tw/" target="_blank" rel="noopener">https://www.renata-hair.com.tw/</a></div>
+  <p>台灣本土沙龍髮品品牌,營運公司益家莉有限公司,同樣使用 ShopLine。</p>
 
   <div class="group-title">可以借的做法</div>
   <ul>
-    <li>首頁第一屏放品牌數據(40 年、10000 家沙龍指定、100000 設計師合作),先建立信任再談產品。<a class="inline-link" href="https://www.renata-hair.com.tw/" target="_blank" rel="noopener">看範例</a></li>
-    <li>產品用三種入口分類:依需求、依品項、依系列。沙龍找貨的人用需求找,熟客用系列找。<a class="inline-link" href="https://www.renata-hair.com.tw/categories/solve" target="_blank" rel="noopener">看範例</a></li>
-    <li>部落格分四類:動態資訊、課程資訊、保養知識、人物專欄。人物專欄是沙龍主理人訪談,這是 B2B 站最有說服力的內容。<a class="inline-link" href="https://www.renata-hair.com.tw/blog/posts" target="_blank" rel="noopener">看範例</a></li>
-    <li>首頁「線上頭皮/髮絲諮詢」區塊,把專業服務做成入口。<a class="inline-link" href="https://www.renata-hair.com.tw/" target="_blank" rel="noopener">看範例</a></li>
-    <li>兩組 LINE 帳號分流:一般消費者一組、沙龍設計師一組,按鈕上直接標明。<a class="inline-link" href="https://www.renata-hair.com.tw/" target="_blank" rel="noopener">看範例</a></li>
-    <li>集團實力區塊:工廠生產、檢驗檢測、研發調配,一站式實力。<a class="inline-link" href="https://www.renata-hair.com.tw/" target="_blank" rel="noopener">看範例</a></li>
+    <li>首頁第一屏放<strong class="hl">品牌數據</strong>(40 年、10000 家沙龍指定、100000 設計師合作),<strong class="hl">先建立信任再談產品</strong>。<a class="inline-link" href="https://www.renata-hair.com.tw/" target="_blank" rel="noopener">看範例</a></li>
+    <li>產品用<strong class="hl">三種入口</strong>分類:依需求、依品項、依系列。沙龍找貨的人用需求找,熟客用系列找。<a class="inline-link" href="https://www.renata-hair.com.tw/categories/solve" target="_blank" rel="noopener">看範例</a></li>
+    <li>部落格分四類:動態資訊、課程資訊、保養知識、<strong class="hl">人物專欄</strong>。人物專欄是沙龍主理人訪談,<strong class="hl">B2B 站最有說服力的內容</strong>。<a class="inline-link" href="https://www.renata-hair.com.tw/blog/posts" target="_blank" rel="noopener">看範例</a></li>
+    <li>首頁「線上頭皮/髮絲諮詢」區塊,把<strong class="hl">專業服務做成入口</strong>。<a class="inline-link" href="https://www.renata-hair.com.tw/" target="_blank" rel="noopener">看範例</a></li>
+    <li><strong class="hl">兩組 LINE 帳號分流</strong>:一般消費者一組、沙龍設計師一組,按鈕上直接標明。<a class="inline-link" href="https://www.renata-hair.com.tw/" target="_blank" rel="noopener">看範例</a></li>
+    <li><strong class="hl">集團實力區塊</strong>:工廠生產、檢驗檢測、研發調配,一站式實力。<a class="inline-link" href="https://www.renata-hair.com.tw/" target="_blank" rel="noopener">看範例</a></li>
   </ul>
 
   <div class="group-title no">不照抄的地方</div>
   <ul>
-    <li>對標站是零售導向,導覽列有本月活動、熱銷、新品、購物金跑馬燈。Helen Seward 定位是 B2B 形象站,這些不放。</li>
-    <li>對標站的「品牌故事」「歷史沿革」「沙龍職業產品」三頁實際上是空白或只有圖片,全站也沒有任何表單,合作只留一個 email。這正是 Helen Seward 可以做得更好的地方。</li>
+    <li>對標站是<strong class="hl">零售導向</strong>,導覽列有本月活動、熱銷、新品、購物金跑馬燈。Helen Seward 定位是 B2B 形象站,這些不放。</li>
+    <li>對標站的「品牌故事」「歷史沿革」「沙龍職業產品」三頁實際上是<strong class="hl">空白或只有圖片</strong>,全站也<strong class="hl">沒有任何表單</strong>,合作只留一個 email。這正是 Helen Seward 可以做得更好的地方。</li>
   </ul>
 </section>
 
@@ -219,9 +236,20 @@
 <div class="panel" id="t3">
 
 <section>
-  <div class="sec-head"><span class="sec-no">四</span><h2>改版架構</h2></div>
+  <div class="sec-head"><span class="sec-no">四</span><h2>改版架構(依導覽列(頁首)順序展開)</h2></div>
 
-  <h3>1. 頁首(Header)</h3>
+  <nav class="arch-nav" aria-label="改版架構大項索引">
+    <a href="#arch-0">0 導覽列(頁首)</a>
+    <a href="#arch-1">1 首頁</a>
+    <a href="#arch-2">2 關於西苓</a>
+    <a href="#arch-3">3 Helen Seward</a>
+    <a href="#arch-4">4 專業知識</a>
+    <a href="#arch-5">5 課程與研習</a>
+    <a href="#arch-6">6 沙龍合作</a>
+    <a href="#arch-7">7 聯絡我們</a>
+  </nav>
+
+  <h3 id="arch-0">0. 導覽列(頁首)</h3>
   <p>導覽列改為六個主項:</p>
   <div class="tbl-scroll">
     <table>
@@ -232,84 +260,126 @@
         <tr><td>專業知識</td><td>頭皮管理 / 染燙與結構修護 / 沙龍經營 / 活動紀錄</td><td>部落格分類</td></tr>
         <tr><td>課程與研習</td><td>課程總覽 / 近期開課 / 過往研習紀錄</td><td>課程頁</td></tr>
         <tr><td>沙龍合作</td><td>合作方式 / 合作沙龍 / 合作洽詢</td><td>合作頁 + 表單</td></tr>
-        <tr><td>聯絡我們</td><td>電話、LINE、地址、表單</td><td>聯絡頁</td></tr>
+        <tr><td>聯絡我們</td><td>電話、LINE、地址、表單入口</td><td>聯絡頁</td></tr>
       </tbody>
     </table>
   </div>
-  <p>頁首右側固定一顆按鈕「沙龍合作洽詢」,連到合作洽詢表單。</p>
-  <p>公告列(頁首上方一行):用來放近期課程或研習會,例如「9/22 頭皮管理進階線上課程,報名中」。ShopLine 公告列最多 5 則,可輪播。</p>
-  <p>購物車與會員圖示:ShopLine 頁首設定裡,搜尋、語言、幣別、聯絡我們可以設為「無」,購物車與會員中心只有「按鈕」「按鈕加文字」兩種選項,無法從設定關掉。處理方式見第五節。</p>
 
-  <h3>2. 首頁區塊(由上而下)</h3>
+  <div class="mockup-row">
+    <figure class="desktop">
+      <img src="mockup/header-desktop.jpg" alt="改版後頁首(桌機)">
+      <figcaption>桌機</figcaption>
+    </figure>
+    <figure class="mobile">
+      <img src="mockup/header-mobile.jpg" alt="改版後頁首(手機)">
+      <figcaption>手機(選單展開)</figcaption>
+    </figure>
+  </div>
+
+  <p>頁首元件:</p>
+  <ul>
+    <li>右側固定一顆按鈕<strong class="hl">「沙龍合作洽詢」</strong>,連到合作洽詢表單。</li>
+    <li>公告列(頁首上方一行):放近期課程或研習會,例如「9/22 頭皮管理進階線上課程,報名中」。ShopLine 公告列最多 5 則,可輪播。</li>
+    <li><strong class="hl">LINE 浮動按鈕</strong>:ShopLine 官方免費擴充功能「聊天小工具」(後台「訊息中心 &gt; 客服助手 &gt; 官網聊天小工具」),裝上後前台右下角出現浮動按鈕,訪客可選 LINE、Facebook Messenger、Instagram 開啟對話。限制:官方文件寫明<strong class="hl">僅支援 Ultra Chic、Kingsman、Varm 版型,現站 Skya 不在名單</strong>。二選一:方案一(建議)版型換成 Ultra Chic,換後聊天小工具、SHOP Builder 進階分頁、Menu Builder 三層目錄都能用;方案二維持 Skya,用自訂程式碼加一顆浮動 LINE 按鈕,只有 LINE,沒有 Messenger 與 IG。</li>
+    <li>購物車與會員圖示:ShopLine 頁首設定裡搜尋、語言、幣別、聯絡我們可以設為「無」,<strong class="hl">購物車與會員中心無法從設定關掉</strong>。處理方式見第五節。</li>
+  </ul>
+
+  <h3 id="arch-1">1. 首頁(Logo 點回的頁)</h3>
+  <p>由上而下:</p>
   <ol>
     <li>主視覺:一句話講定位。建議方向:「義大利米蘭 1969 年創立,西苓國際 1992 年起台灣總代理,專業沙龍髮品與頭皮管理教育」。按鈕兩顆:「了解合作方式」「看產品系列」。</li>
     <li>品牌數據列:1969 米蘭創立、1992 起台灣總代理、59 個國家專業沙龍、合作沙龍數(請業主提供)、累計課程場次(請業主提供)。</li>
     <li>我們為沙龍做三件事:產品導入、頭皮管理教育訓練、沙龍轉型顧問。每項一張圖一段話,按鈕連到對應頁。</li>
     <li>產品系列總覽:Mediter 地中海洗護、SYNEBI 森比、Structure 結構修護、FUSION / LUMIA 專業染膏、INDACO 造型。點進去是系列介紹頁,不是商品格。</li>
     <li>專業知識精選:最新 3 到 4 篇部落格文章。</li>
-    <li>課程與研習:近期一場開課資訊加報名按鈕;下方放過往研習會照片(講座、大師示範、頭皮檢測實作)。</li>
-    <li>合作沙龍見證:設計師或店長一句話推薦,附店名與地區。這段內容需要業主提供 3 到 5 家。</li>
+    <li>課程與研習:近期一場開課資訊加 LINE 按鈕;下方放過往研習會照片(講座、大師示範、頭皮檢測實作)。</li>
+    <li>合作沙龍見證:設計師或店長一句話推薦,附店名與地區。需要業主提供 3 到 5 家。</li>
     <li>合作洽詢區塊:一段說明加「填寫合作洽詢表」按鈕,旁邊放 LINE 官方帳號按鈕。</li>
     <li>頁尾:聯絡資訊、統編、LINE、FB、IG 連結。</li>
   </ol>
   <p>原本首頁的 6 支 YouTube 影片,挑 1 到 2 支放進「課程與研習」區塊,其餘移到課程頁。</p>
 
-  <h3>3. 品牌頁群(關於西苓)</h3>
-  <p>現站只有「品牌故事」一頁有字。擴充成四頁:</p>
+  <h3 id="arch-2">2. 關於西苓(品牌頁群)</h3>
+  <p><strong class="hl">Google 只讀文字,不讀圖片。</strong> 現站「原廠授權」「認證專利」是空白頁,「品牌故事」只有一頁有字,搜尋引擎抓不到品牌與授權的內容。兩條路二選一:</p>
+  <ul>
+    <li>路線 A(合併):三頁合成一頁「關於西苓」,一頁內分段:品牌故事、台灣總代理歷程、原廠授權與認證、團隊與講師。每段都有文字,圖片只當佐證。</li>
+    <li>路線 B(擴充):三頁各自補足文字,再加一頁「團隊與講師」。每頁至少 300 字說明,圖片附文字說明。</li>
+  </ul>
+  <p>兩條路的內容都一樣,差別只在頁數。建議路線 B,因為每頁可以各自設定搜尋標題與描述。</p>
+  <p>各頁(或各段)內容:</p>
   <ul>
     <li>品牌故事:沿用現有文字,分段加小標,補圖。</li>
     <li>台灣總代理歷程:1992 成立西苓國際、1994 發展連鎖沙龍加盟店培訓、2011 英國 ITF 頭皮管理講師培訓證書、2012 到 2016 台北醫學大學推廣處校外教師、2018 台北經國管理學院頭皮管理教授、2019 英國國際整體醫學自然療法執行師證照。做成時間軸。</li>
-    <li>原廠授權與認證:現在是空白頁。放原廠授權書、PHENBIOX 有機活性認證、相關檢驗文件的圖片與說明文字。這一頁對沙龍老闆最重要,是「為什麼要跟你進貨」的答案。</li>
+    <li>原廠授權與認證:現在是空白頁。放原廠授權書、PHENBIOX 有機活性認證、相關檢驗文件的圖片與<strong class="hl">文字說明</strong>。這一頁對沙龍老闆最重要,是<strong class="hl">「為什麼要跟你進貨」的答案</strong>。</li>
     <li>團隊與講師:負責人與講師簡介,含台灣毛髮交流協會理事長身分。</li>
   </ul>
   <p>年資數字統一用「1992 起」。現站品牌故事寫「29 年」、IG 寫「28 年」,改版時統一。</p>
 
-  <h3>4. 產品系列頁</h3>
-  <p>每個系列頁改成「介紹頁」結構,不是商品格:</p>
+  <h3 id="arch-3">3. Helen Seward(產品系列頁)</h3>
+  <p><strong class="hl">先向 ShopLine 確認</strong>:系列頁目前是「商品陳列頁」結構(商品格加購物車按鈕),要改成「介紹頁」結構(文字段落加產品清單),需要確認現行版型或 SHOP Builder 能否做到。確認可行後,每個系列頁改成:</p>
   <ol>
     <li>系列定位一句話(給誰、解決什麼)</li>
     <li>適用的沙龍服務項目(頭皮管理、染燙、造型)</li>
     <li>核心成分與技術</li>
-    <li>系列內產品清單(圖片、品名、容量、用途;不顯示售價)</li>
+    <li>系列內產品清單(圖片、品名、容量、用途;<strong class="hl">不顯示售價</strong>)</li>
     <li>頁尾 CTA:「想了解這個系列怎麼導入沙龍」連到合作洽詢表單,旁邊放 LINE 按鈕</li>
   </ol>
   <p>Mediter 系列的 13 個編號子系列,收成一頁,用「依頭皮髮質需求」分組,例如:強健與豐盈、油脂與淨化、修護與護色、舒緩。</p>
 
-  <h3>5. 部落格(專業知識)</h3>
+  <h3 id="arch-4">4. 專業知識(部落格)</h3>
   <p>ShopLine 內建部落格,後台路徑「網店設計 &gt; 部落格」,最多 10 個分類,每篇可設 SEO 標題、簡介、描述性網址。</p>
   <p>建議四個分類:</p>
   <div class="tbl-scroll">
     <table>
-      <thead><tr><th style="width:16%">分類</th><th>內容</th><th>目的</th></tr></thead>
+      <thead><tr><th style="width:16%">分類</th><th>對象</th><th>目的</th></tr></thead>
       <tbody>
-        <tr><td>頭皮管理</td><td>頭皮檢測怎麼看、男性稀疏頭髮 4 種類型、換季頭皮調理</td><td>廣告導流的主要落點</td></tr>
-        <tr><td>染燙與結構修護</td><td>角蛋白矯正流程、卡色校正、漂後修護</td><td>技術型設計師</td></tr>
-        <tr><td>沙龍經營</td><td>高客單轉型、頭皮管理服務怎麼定價、課程學員案例</td><td>店長與老闆</td></tr>
-        <tr><td>活動紀錄</td><td>研習會回顧、義大利大師來台、週年慶</td><td>證明品牌有在動</td></tr>
+        <tr><td>頭皮管理</td><td>頭皮管理師、想導入頭皮服務的設計師</td><td>廣告導流的主要落點</td></tr>
+        <tr><td>染燙與結構修護</td><td>技術型設計師</td><td>技術操作與產品搭配</td></tr>
+        <tr><td>沙龍經營</td><td>店長與老闆</td><td>客單價、留客、轉型</td></tr>
+        <tr><td>活動紀錄</td><td>全部</td><td>證明品牌有在動</td></tr>
       </tbody>
     </table>
   </div>
-  <p>首批 10 篇題目建議:</p>
-  <ol>
-    <li>頭皮檢測看什麼:毛囊放大鏡下的四個觀察點</li>
-    <li>男性頭髮稀疏的四種類型,沙龍怎麼判讀與建議</li>
-    <li>換季頭皮出油與屑,沙龍端可以做的調理流程</li>
-    <li>沙龍導入頭皮管理服務的第一個月:設備、流程、話術</li>
-    <li>角蛋白矯正重塑:Structure 結構系列 N°0 到 N°8 怎麼用</li>
-    <li>染後卡色怎麼校正:色彩校正系列的操作步驟</li>
-    <li>為什麼是義大利:Helen Seward 從 1969 年米蘭到 59 個國家</li>
-    <li>PHENBIOX 有機活性認證原料是什麼</li>
-    <li>研習會回顧:2024 義大利大師流行趨勢研習</li>
-    <li>合作沙龍訪談:某店導入頭皮管理後客單價的變化(需業主提供受訪店家)</li>
-  </ol>
-  <p>每篇文章末尾固定兩顆按鈕:「想收到下一場開課通知」連課程通知表單;「加入 LINE 官方帳號」。</p>
+  <p><strong class="hl">文章題目由業主決定。</strong> 業主在專業上的實務經驗比我們多,我們提供的是市場端的用戶痛點方向(下表),業主依經驗選題與撰寫,我們協助結構與搜尋設定。</p>
+  <p>用戶痛點方向(2026-09-13 市場調查,來源:Google 搜尋建議詞、PTT 相關看板):</p>
+  <div class="tbl-scroll">
+    <table>
+      <thead><tr><th style="width:20%">方向</th><th>市場證據</th><th style="width:16%">誰在問</th><th>給業主的選題提示</th></tr></thead>
+      <tbody>
+        <tr><td><strong class="hl">頭皮管理師職涯</strong>:證照、課程、薪水、工作</td><td>Google 建議詞「頭皮管理」延伸 10 筆,其中證照 2、課程 2、薪水 1、工作 1</td><td>想加技能或轉職的設計師</td><td>頭皮管理師要學什麼、證照怎麼取得、沙龍怎麼把頭皮服務排進流程</td></tr>
+        <tr><td><strong class="hl">頭皮檢測</strong>:儀器、費用、診所或沙龍</td><td>Google 建議詞 10 筆(儀、費用、診所、皮膚科、推薦)</td><td>消費者,以及想導入檢測的沙龍</td><td>沙龍端的頭皮檢測看什麼、跟皮膚科的分工在哪(用「觀察、調理」,不寫診斷)</td></tr>
+        <tr><td><strong class="hl">頭皮出油、頭皮屑、頭皮癢、頭皮味</strong></td><td>Google 建議詞 13 筆(原因、怎麼辦、突然變多);PTT hairdo 板「頭皮」近 20 篇中 8 篇是這四題</td><td>消費者,到沙龍會問設計師</td><td>設計師被客人問到時的說法,搭配哪個系列、居家怎麼接</td></tr>
+        <tr><td><strong class="hl">落髮</strong>:換季、產後、壓力、男性稀疏</td><td>Google 建議詞「男性 頭髮 稀疏」;PTT hairdo 板「落髮」20 篇,產後與換季最多</td><td>消費者</td><td>沙龍端能做與不能做的邊界、男性稀疏四種類型怎麼判讀</td></tr>
+        <tr><td><strong class="hl">對產品的懷疑</strong>:「頭皮保養產品真的有用嗎」、無矽靈、成分</td><td>PTT hairdo 板該題 8 推、回文串;「產品」20 篇多為求推薦與比較</td><td>消費者與設計師</td><td>成分、認證(PHENBIOX、義大利原廠)怎麼講才讓人信</td></tr>
+        <tr><td><strong class="hl">沙龍經營</strong>:客單價、留客、轉型、抽成</td><td>Google 建議詞與 PTT 皆 0 筆,<strong class="hl">沒有公開搜尋需求</strong></td><td>業內人,不上公開平台問</td><td>這一類靠業主與顧問經驗定題,不靠搜尋;IG 現有與沙龍轉型顧問協作的內容可直接轉成文章</td></tr>
+        <tr><td>染燙技術:角蛋白矯正、卡色、漂後修護</td><td>Google 建議詞 0 筆</td><td>技術型設計師</td><td>同上,靠業主經驗定題;文章的價值在留住設計師,不在搜尋</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>前五個方向有公開搜尋需求,適合做部落格首批;後兩個方向沒有搜尋量,但對合作沙龍有用,可以放第二批。</p>
+  <p>需要更精確的數字時有兩種外接工具:①Google Ads 關鍵字規劃工具,查每個方向的月搜尋量;②Dcard 美髮版與美髮業 FB 社團,查沙龍經營類的實際討論(PTT 沒有沙龍經營板)。業主需要的話告訴我們。</p>
+  <p>每篇文章末尾固定一顆按鈕:「想了解怎麼導入沙龍」連合作洽詢表單,加一顆「加入 LINE 官方帳號」。</p>
   <p>文案寫作原則:一句一個畫面,不用副詞,不寫「改善、治療、預防」這類療效動詞,涉及頭皮狀態的描述用「幫助、維持、調理」。</p>
 
-  <h3>6. 表單</h3>
-  <p>ShopLine 內建「內嵌客製表單」(後台「網店設計 &gt; 內嵌客製表單」),表單是獨立分頁,有專屬網址,回覆可寄到指定信箱,可匯出 CSV。</p>
-  <p>建兩張表單:</p>
+  <h3 id="arch-5">5. 課程與研習</h3>
+  <p>課程是主動推播、有時效性,不靠搜尋,所以<strong class="hl">這一區不做表單</strong>,用公告列、LINE 官方帳號與廣告推。</p>
+  <p>頁面內容:</p>
+  <ul>
+    <li>課程總覽:頭皮管理課程、義大利大師技術研習、趨勢發表會,各一段說明與對象</li>
+    <li>近期開課:日期、時間、形式(線上或實體)、對象、「加 LINE 索取報名連結」按鈕</li>
+    <li>過往研習紀錄:照片與影片(現首頁 6 支 YouTube 影片移到這裡)</li>
+    <li>學員回饋(需業主提供)</li>
+  </ul>
 
-  <h4>表單 A:沙龍合作洽詢</h4>
+  <h3 id="arch-6">6. 沙龍合作</h3>
+  <p>頁面內容:</p>
+  <ul>
+    <li>合作方式三段:產品導入、頭皮管理教育訓練、沙龍轉型顧問</li>
+    <li>合作流程四步:填表或加 LINE、一個工作天內聯繫、安排說明或示範、導入與後續教育訓練</li>
+    <li>合作沙龍:店名、地區、一句話(需業主提供,先從 3 到 5 家開始)</li>
+    <li>頁末合作洽詢表單入口</li>
+  </ul>
+  <p><strong class="hl">表單只做一張:沙龍合作洽詢。</strong> ShopLine 內建「內嵌客製表單」(後台「網店設計 &gt; 內嵌客製表單」),表單是獨立分頁,有專屬網址,回覆可寄到指定信箱,可匯出 CSV。</p>
   <div class="tbl-scroll">
     <table>
       <thead><tr><th style="width:24%">欄位</th><th style="width:10%">必填</th><th>型態</th></tr></thead>
@@ -324,69 +394,32 @@
       </tbody>
     </table>
   </div>
-
-  <h4>表單 B:課程開課通知</h4>
+  <p>欄位對齊現行 Messenger 自動回覆收資料的三項(店名、地區、電話或 LINE),日後表單與私訊收到的資料格式一致。送出後顯示:「感謝您留下資料,我們會在一個工作天內與您聯繫。」並附 LINE 官方帳號連結。</p>
+  <p><strong class="hl">表單入口放哪裡</strong>(入口 = 連到表單頁的按鈕;若 ShopLine 評估該頁面無法放表單或按鈕,改用外連按鈕):</p>
   <div class="tbl-scroll">
     <table>
-      <thead><tr><th style="width:30%">欄位</th><th>必填</th></tr></thead>
+      <thead><tr><th style="width:34%">位置</th><th>形式</th></tr></thead>
       <tbody>
-        <tr><td>您的身分</td><td>是(同上四選一)</td></tr>
-        <tr><td>店名</td><td>是</td></tr>
-        <tr><td>所在地區</td><td>是</td></tr>
-        <tr><td>聯絡電話或 LINE ID</td><td>是</td></tr>
-        <tr><td>有興趣的課程主題</td><td>否(多選:頭皮管理 / 染燙技術 / 沙龍經營)</td></tr>
+        <tr><td>頁首右側固定按鈕</td><td>按鈕</td></tr>
+        <tr><td>首頁「合作洽詢」區塊</td><td>按鈕</td></tr>
+        <tr><td>沙龍合作頁末</td><td>表單本體或按鈕</td></tr>
+        <tr><td>每個產品系列頁末</td><td>按鈕</td></tr>
+        <tr><td>品牌頁群每頁末</td><td>按鈕</td></tr>
+        <tr><td>每篇部落格文章末</td><td>按鈕</td></tr>
+        <tr><td>聯絡我們頁</td><td>表單本體或按鈕</td></tr>
       </tbody>
     </table>
   </div>
+  <p>不放:商品單頁、政策頁(運送、退換貨、隱私、條款)、會員頁、課程頁。一頁只放一個入口,放在內容讀完的位置,不做彈窗、不做進站即跳出。</p>
 
-  <p>欄位對齊現行 Messenger 自動回覆收資料的三項(店名、地區、電話或 LINE),日後表單與私訊收到的資料格式一致,方便合併管理。</p>
-  <p>表單送出後顯示:「感謝您留下資料,我們會在一個工作天內與您聯繫。」並附 LINE 官方帳號連結。</p>
-
-  <h4>表單入口放哪裡(放的地方)</h4>
-  <div class="tbl-scroll">
-    <table>
-      <thead><tr><th style="width:34%">位置</th><th>連到</th></tr></thead>
-      <tbody>
-        <tr><td>頁首右側固定按鈕</td><td>表單 A</td></tr>
-        <tr><td>首頁「合作洽詢」區塊</td><td>表單 A</td></tr>
-        <tr><td>沙龍合作頁末</td><td>表單 A</td></tr>
-        <tr><td>每個產品系列頁末</td><td>表單 A</td></tr>
-        <tr><td>品牌頁群每頁末</td><td>表單 A</td></tr>
-        <tr><td>課程頁與近期開課區塊</td><td>表單 B</td></tr>
-        <tr><td>每篇部落格文章末</td><td>表單 B</td></tr>
-        <tr><td>聯絡我們頁</td><td>表單 A</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p><b>不放的地方</b>:商品單頁、政策頁(運送、退換貨、隱私、條款)、會員頁。</p>
-  <p>一頁只放一個表單入口,放在內容讀完的位置,不做彈窗、不做進站即跳出。</p>
-
-  <h3>7. LINE 官方帳號按鈕與聊天外掛</h3>
-  <p>ShopLine 官方有免費擴充功能「聊天小工具」(後台「訊息中心 &gt; 客服助手 &gt; 官網聊天小工具」),裝上後前台右下角出現浮動按鈕,訪客可選 LINE、Facebook Messenger、Instagram 開啟對話。</p>
-  <p>限制:官方文件寫明「目前僅支援 Ultra Chic、Kingsman、Varm 店面版型」。現站版型是 Skya,不在名單內。</p>
-  <p>處理方式二選一:</p>
+  <h3 id="arch-7">7. 聯絡我們</h3>
   <ul>
-    <li>方案一(建議):版型換成 Ultra Chic(對標站用的就是這個版型)。換版型後,聊天小工具、SHOP Builder 進階分頁、Menu Builder 三層目錄都能用。</li>
-    <li>方案二:維持 Skya,用自訂程式碼加一顆浮動 LINE 按鈕(連到 https://lin.ee/ 的加好友連結)。只有 LINE,沒有 Messenger 與 IG。</li>
-  </ul>
-  <p>同時在頁尾與聯絡頁放 LINE 加好友按鈕與 QR code。</p>
-
-  <h3>8. 課程與研習頁</h3>
-  <p>現站沒有這一頁。內容:</p>
-  <ul>
-    <li>課程總覽:頭皮管理課程、義大利大師技術研習、趨勢發表會,各一段說明與對象</li>
-    <li>近期開課:日期、時間、形式(線上或實體)、對象、報名按鈕(連表單 B 或指定報名連結)</li>
-    <li>過往研習紀錄:照片與影片(現首頁 6 支 YouTube 影片移到這裡)</li>
-    <li>學員回饋(需業主提供)</li>
+    <li>客服專線 0800-600-987、服務時間週一至週五 08:30–17:30、地址高雄市鼓山區華榮路 53 號</li>
+    <li>LINE 官方帳號 @umg6062l:加好友按鈕與 QR code</li>
+    <li>合作洽詢表單入口</li>
+    <li>FB、IG 連結(現站頁尾缺這兩個)</li>
   </ul>
 
-  <h3>9. 沙龍合作頁</h3>
-  <ul>
-    <li>合作方式三段:產品導入、頭皮管理教育訓練、沙龍轉型顧問</li>
-    <li>合作流程四步:填表或加 LINE、一個工作天內聯繫、安排說明或示範、導入與後續教育訓練</li>
-    <li>合作沙龍:店名、地區、一句話(需業主提供,先從 3 到 5 家開始)</li>
-    <li>頁末表單 A 入口</li>
-  </ul>
 </section>
 
 </div><!-- /t3 -->
@@ -403,14 +436,14 @@
     <table>
       <thead><tr><th style="width:26%">做法</th><th>效果</th><th>限制</th></tr></thead>
       <tbody>
-        <tr><td>產品系列頁改成介紹頁,不放商品格</td><td>訪客在系列頁看不到售價與購物車</td><td>商品單頁仍會顯示售價與加入購物車</td></tr>
+        <tr><td>產品系列頁改成介紹頁,不放商品格</td><td>訪客在系列頁看不到售價與購物車</td><td><strong class="hl">需先向 ShopLine 確認可行</strong>;商品單頁仍會顯示售價與加入購物車</td></tr>
         <tr><td>商品單頁不放進導覽列與任何頁面連結</td><td>一般訪客走不到商品單頁</td><td>搜尋引擎仍可能收錄舊商品頁網址</td></tr>
         <tr><td>商品逐一設為「隱藏」</td><td>商品單頁與搜尋都不出現</td><td>現有 127 筆商品要逐筆處理;隱藏後現有給特定客戶的下單方式需另外安排</td></tr>
         <tr><td>頁首購物車圖示</td><td>無法從設定關閉</td><td>可用自訂 CSS 隱藏,需實測</td></tr>
       </tbody>
     </table>
   </div>
-  <p>建議:先做前兩項(系列頁改介紹頁、不連結商品單頁),頁首購物車圖示用自訂 CSS 隱藏並實測。商品是否全部隱藏,依業主現行「主動聯繫的消費者才提供下單方式」的做法決定。</p>
+  <p>建議:先做前兩項,頁首購物車圖示用自訂 CSS 隱藏並實測。商品是否全部隱藏,依業主現行「主動聯繫的消費者才提供下單方式」的做法決定。</p>
   <p>另外三個「活動尚未開始」的促銷頁,改版時關閉或移除,避免訪客點進去看到空頁。</p>
 </section>
 
@@ -443,10 +476,11 @@
     <table>
       <thead><tr><th style="width:14%">階段</th><th>內容</th><th style="width:26%">由誰</th></tr></thead>
       <tbody>
-        <tr><td>第 1 階段</td><td>版型評估與更換、頁首導覽重排、聊天小工具安裝、兩張表單建立、追蹤碼安裝</td><td>我方</td></tr>
-        <tr><td>第 2 階段</td><td>首頁改版、品牌頁群四頁、沙龍合作頁、課程頁</td><td>我方撰稿,業主提供素材</td></tr>
+        <tr><td>第 0 階段</td><td>向 ShopLine 業務確認:①產品落地頁/文章頁/聯絡我們頁能否放表單或按鈕 ②系列頁能否改介紹頁結構 ③換版型 Ultra Chic 的影響</td><td>業主聯繫,我方提供問題清單</td></tr>
+        <tr><td>第 1 階段</td><td>版型更換、導覽列重排、聊天小工具安裝、合作洽詢表單建立、追蹤碼安裝</td><td>我方</td></tr>
+        <tr><td>第 2 階段</td><td>首頁改版、關於西苓頁群、沙龍合作頁、課程頁、聯絡我們頁</td><td>我方撰稿,業主提供素材</td></tr>
         <tr><td>第 3 階段</td><td>產品系列頁改介紹頁(5 個系列群)</td><td>我方撰稿,業主核對成分與用途</td></tr>
-        <tr><td>第 4 階段</td><td>部落格首批 10 篇上線,之後每月 2 到 4 篇</td><td>我方撰稿,業主審稿</td></tr>
+        <tr><td>第 4 階段</td><td>部落格上線:業主依痛點方向選題撰寫,我方做結構與搜尋設定;之後每月 2 到 4 篇</td><td>業主撰稿,我方編輯</td></tr>
         <tr><td>第 5 階段</td><td>廣告連結切換到新頁面,追蹤表單與 LINE 點擊數</td><td>我方</td></tr>
       </tbody>
     </table>
@@ -466,6 +500,7 @@
     <li>是否同意版型換成 Ultra Chic</li>
     <li>商品是否全部隱藏,或保留給特定客戶的下單方式</li>
     <li>表單回覆要寄到哪個信箱</li>
+    <li>ShopLine 業務窗口(第 0 階段可行性評估用)</li>
   </ul>
 </section>
 
